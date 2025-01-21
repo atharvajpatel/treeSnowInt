@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Repository Visualizer</title>
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <link rel="stylesheet" href="/src/styles/visualization.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body data-theme="dark">
+    <div id="app">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-code-branch"></i>
+                <span>Ur Mom</span>
+            </div>
+        </nav>
+
+        <main>
+            <aside class="sidebar">
+                <div class="repo-form">
+                    <h2>Repository Analysis</h2>
+                    <div class="input-group">
+                        <div class="input-wrapper">
+                            <label for="owner">Repository Owner</label>
+                            <input type="text" id="owner" placeholder="e.g., microsoft">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="repo">Repository Name</label>
+                            <input type="text" id="repo" placeholder="e.g., vscode">
+                        </div>
+                    </div>
+                    <button id="analyzeBtn" class="primary-btn">
+                        <i class="fas fa-play"></i>
+                        Analyze Repository
+                    </button>
+                </div>
+
+                <div class="progress-container hidden">
+                    <div class="progress-header">
+                        <span class="progress-title">Analysis Progress</span>
+                        <span class="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="progress-status">Initializing...</div>
+                </div>
+
+                <div class="diagnostics-panel">
+                    <div class="diagnostics-header">
+                        <h3>Diagnostics</h3>
+                        <button class="clear-btn" id="clearDiagnostics">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    <div class="diagnostics-content" id="diagnosticsContent"></div>
+                </div>
+            </aside>
+
+            <section class="visualization-container">
+                <div id="visualization" style="width: 100%; height: 100%;"></div>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
